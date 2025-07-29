@@ -147,10 +147,9 @@ def main():
 
     # Section 4.9 - Anticipated Activity
     if any(r in selected_risks for r in [
-        "Correspondent Banking Relationship"
+        "High risk business/activity", "Non-resident individual or entity", "Dealing with or resident of High risk jurisdiction", "Politically Exposed Person (PEP)", "Related to PEP (PEP-R)",
+        "Associates of PEP (PEP-A)", "Club, Charity, or Other Society", "Pooled Fund", "Introduced Business from Professional Intermediaries"
     ]):
-        pass
-    else:
         st.subheader("4.9 Anticipated Activity")
         for i in range(3):
             st.markdown(f"**Transaction {i+1}**")
