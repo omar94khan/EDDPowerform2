@@ -13,17 +13,38 @@ def main():
     st.header("2. High Risk Classification")
     st.markdown("Please select all applicable classifications")
 
+
+    # 3. General Enhanced Due Diligence Measures
+    st.header("3. General Enhanced Due Diligence Measures")
+    st.subheader("Evidence of Address")
+    st.checkbox("Through Credit Reference Agency")
+    st.checkbox("Verification by visit")
+    st.date_input("Date of Visit", value=date.today())
+    st.text_input("Staff Name")
+    st.text_input("Other (please specify)")
+
+    st.subheader("Source of Wealth")
+    st.text_area("Describe the source of wealth")
+
+    st.subheader("Source of Funds")
+    st.text_area("Describe the origin of funds")
+
+    st.subheader("Purpose & Utility of the Account")
+    st.checkbox("Depository Relation")
+    st.checkbox("Facility Settlement")
+    st.text_input("Other Purpose")
+
     risk_classifications = {
-        "High risk business/activity": ["3", "4.1", "4.7", "4.8", "4.9", "4.10", "5"],
-        "Non-resident individual or entity": ["3", "4.2", "4.7", "4.8", "4.9", "4.10", "5"],
-        "Dealing with or resident of High risk jurisdiction": ["3", "4.3", "4.7", "4.8", "4.9", "4.10", "5"],
-        "Politically Exposed Person (PEP)": ["3", "4.4", "4.7", "4.8", "4.9", "5"],
-        "Related to PEP (PEP-R)": ["3", "4.5", "4.7", "4.8", "4.9", "5"],
-        "Associates of PEP (PEP-A)": ["3", "4.6", "4.7", "4.8", "4.9", "4.10", "5"],
-        "Club, Charity, or Other Society": ["3", "4.8", "4.9", "4.11", "5"],
-        "Pooled Fund": ["3", "4.7", "4.8", "4.9", "4.10", "4.12", "5"],
-        "Correspondent Banking Relationship": ["3", "4.10", "4.13", "5"],
-        "Introduced Business from Professional Intermediaries": ["3", "4.7", "4.8", "4.9", "4.10", "4.13", "5"]
+        "High risk business/activity":                          ["4.1", "4.7", "4.8", "4.9", "4.10", "5"],
+        "Non-resident individual or entity":                    ["4.2", "4.7", "4.8", "4.9", "4.10", "5"],
+        "Dealing with or resident of High risk jurisdiction":   ["4.3", "4.7", "4.8", "4.9", "4.10", "5"],
+        "Politically Exposed Person (PEP)":                     ["4.4", "4.7", "4.8", "4.9", "5"],
+        "Related to PEP (PEP-R)":                               ["4.5", "4.7", "4.8", "4.9", "5"],
+        "Associates of PEP (PEP-A)":                            ["4.6", "4.7", "4.8", "4.9", "4.10", "5"],
+        "Club, Charity, or Other Society":                      ["4.8", "4.9", "4.11", "5"],
+        "Pooled Fund":                                          ["4.7", "4.8", "4.9", "4.10", "4.12", "5"],
+        "Correspondent Banking Relationship":                   ["4.10", "4.13", "5"],
+        "Introduced Business from Professional Intermediaries": ["4.7", "4.8", "4.9", "4.10", "4.13", "5"]
     }
 
     selected_risks = []
