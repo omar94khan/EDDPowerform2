@@ -146,15 +146,20 @@ def main():
             st.date_input("Account Opening Date", key=f"fi_date_{i}")
 
     # Section 4.9 - Anticipated Activity
-    st.subheader("4.9 Anticipated Activity")
-    for i in range(3):
-        st.markdown(f"**Transaction {i+1}**")
-        st.radio("Direction", ["Debit", "Credit"], key=f"flow_dir_{i}")
-        st.radio("Channel", ["Cash", "Cheque", "Wire"], key=f"channel_{i}")
-        st.text_input("Purpose", key=f"purpose_{i}")
-        st.selectbox("Frequency", ["Monthly", "Quarterly", "Annually"], key=f"freq_{i}")
-        st.text_input("Originator/Beneficiary", key=f"party_{i}")
-        st.number_input("Amount", min_value=0.0, key=f"amt_{i}")
+    if any(r in selected_risks for r in [
+        "Correspondent Banking Relationship"
+    ]):
+        pass
+    else:
+        st.subheader("4.9 Anticipated Activity")
+        for i in range(3):
+            st.markdown(f"**Transaction {i+1}**")
+            st.radio("Direction", ["Debit", "Credit"], key=f"flow_dir_{i}")
+            st.radio("Channel", ["Cash", "Cheque", "Wire"], key=f"channel_{i}")
+            st.text_input("Purpose", key=f"purpose_{i}")
+            st.selectbox("Frequency", ["Monthly", "Quarterly", "Annually"], key=f"freq_{i}")
+            st.text_input("Originator/Beneficiary", key=f"party_{i}")
+            st.number_input("Amount", min_value=0.0, key=f"amt_{i}")
 
     # Section 4.10 - Shareholders/UBOs
     if any(r in selected_risks for r in [
