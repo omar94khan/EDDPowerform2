@@ -13,27 +13,6 @@ def main():
     st.header("2. High Risk Classification")
     st.markdown("Please select all applicable classifications")
 
-
-    # 3. General Enhanced Due Diligence Measures
-    st.header("3. General Enhanced Due Diligence Measures")
-    st.subheader("Evidence of Address")
-    st.checkbox("Through Credit Reference Agency")
-    st.checkbox("Verification by visit")
-    st.date_input("Date of Visit", value=date.today())
-    st.text_input("Staff Name")
-    st.text_input("Other (please specify)")
-
-    st.subheader("Source of Wealth")
-    st.text_area("Describe the source of wealth")
-
-    st.subheader("Source of Funds")
-    st.text_area("Describe the origin of funds")
-
-    st.subheader("Purpose & Utility of the Account")
-    st.checkbox("Depository Relation")
-    st.checkbox("Facility Settlement")
-    st.text_input("Other Purpose")
-
     risk_classifications = {
         "High risk business/activity":                          ["4.1", "4.7", "4.8", "4.9", "4.10", "5"],
         "Non-resident individual or entity":                    ["4.2", "4.7", "4.8", "4.9", "4.10", "5"],
@@ -52,26 +31,26 @@ def main():
         if st.checkbox(key):
             selected_risks.append(key)
 
-    # # 3. General Enhanced Due Diligence Measures
+    # 3. General Enhanced Due Diligence Measures
     # if selected_risks:
-    #     st.header("3. General Enhanced Due Diligence Measures")
-    #     st.subheader("Evidence of Address")
-    #     st.checkbox("Through Credit Reference Agency")
-    #     st.checkbox("Verification by visit")
-    #     st.date_input("Date of Visit", value=date.today())
-    #     st.text_input("Staff Name")
-    #     st.text_input("Other (please specify)")
+    st.header("3. General Enhanced Due Diligence Measures")
+    st.subheader("Evidence of Address")
+    st.checkbox("Through Credit Reference Agency")
+    st.checkbox("Verification by visit")
+    st.date_input("Date of Visit", value=date.today())
+    st.text_input("Staff Name")
+    st.text_input("Other (please specify)")
 
-    #     st.subheader("Source of Wealth")
-    #     st.text_area("Describe the source of wealth")
+    st.subheader("Source of Wealth")
+    st.text_area("Describe the source of wealth")
 
-    #     st.subheader("Source of Funds")
-    #     st.text_area("Describe the origin of funds")
+    st.subheader("Source of Funds")
+    st.text_area("Describe the origin of funds")
 
-    #     st.subheader("Purpose & Utility of the Account")
-    #     st.checkbox("Depository Relation")
-    #     st.checkbox("Facility Settlement")
-    #     st.text_input("Other Purpose")
+    st.subheader("Purpose & Utility of the Account")
+    st.checkbox("Depository Relation")
+    st.checkbox("Facility Settlement")
+    st.text_input("Other Purpose")
 
     # Dynamic Sections
     def show_section(title, required):
