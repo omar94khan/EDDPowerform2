@@ -37,7 +37,7 @@ def main():
         st.subheader("Evidence of Address")
         st.checkbox("Through Credit Reference Agency")
         st.checkbox("Verification by visit")
-        st.date_input("Date of Visit", value=datetime.today())
+        st.date_input("Date of Visit", value=date.today())
         st.text_input("Staff Name")
         st.text_input("Other (please specify)")
 
@@ -74,11 +74,11 @@ def main():
     st.header("6. Verification")
     st.text_input("Account Officer Name")
     st.text_input("Account Officer Designation")
-    st.date_input("Verification Date (Officer)", value=datetime.today())
+    st.date_input("Verification Date (Officer)", value=date.today())
 
     st.text_input("Compliance Name")
     st.text_input("Compliance Designation")
-    st.date_input("Verification Date (Compliance)", value=datetime.today())
+    st.date_input("Verification Date (Compliance)", value=date.today())
 
     # 7. Executive Management Approval
     st.header("7. Executive Management Approval")
